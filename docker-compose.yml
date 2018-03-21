@@ -3,15 +3,18 @@ version: '3.1'
 services:
 
   wordpress:
-    image: wordpress:4.9.4
+    image: wordpress
     restart: always
+    command: /config/setup.sh
     volumes:
       - ./wp-content:/var/www/html/wp-content
+      - ./config:/config
     ports:
-      - 8080:80
+      - 8080:80  
     environment:
       WORDPRESS_DB_PASSWORD: 4dhWlbHg0Jlp
       WORDPRESS_DEBUG: "true"
+      WORDPRESS_FS_METHOD: "direct"
 
   mysql:
     image: mysql:5.7
