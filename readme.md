@@ -2,7 +2,7 @@
 
 ## Installation
 
-* Install docker for windows:
+### Windows
 https://store.docker.com/editions/community/docker-ce-desktop-windows
 
 
