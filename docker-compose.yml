@@ -7,7 +7,6 @@ services:
     restart: always
     volumes:
       - ./wp-content:/var/www/html/wp-content
-      - ./config:/config
     ports:
       - 8080:80  
     environment:
