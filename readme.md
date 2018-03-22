@@ -11,7 +11,7 @@ https://store.docker.com/editions/community/docker-ce-desktop-windows
 ### Windows
 
 * Open PowerShell - *Do not use integrated terminal in VS-Code*
-* Navigate to folder
+* Navigate to sub-folder `windows`
 * `docker-compose up -d`
 
 ### Linux / Mac
