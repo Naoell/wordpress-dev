@@ -34,7 +34,7 @@ https://store.docker.com/editions/community/docker-ce-desktop-windows
 ## Create MySQL dump
 
 1. Run containers
-2. Attach to containers `docker exec -it mysql_container bash`
+2. Attach to container `docker exec -it mysql_container bash`
 3. Run mysql dump `mysqldump -u root -p --no-create-db wordpress > /var/lib/mysql/wordpress-$(date +%Y-%m-%d).sql`
     * You will be prompted for password: `4dhWlbHg0Jlp`
 4. Get the file from the mysql folder.
@@ -42,6 +42,6 @@ https://store.docker.com/editions/community/docker-ce-desktop-windows
 ## Import MySQL dump
 1. Put the file under the mysql folder.
 2. Run containers
-3. Attach to containers `docker exec -it mysql_container bash`
+3. Attach to container `docker exec -it mysql_container bash`
 4. Run sql file on database `mysql -u username -p wordpress < /var/lib/mysql/<filename>`
     * You will be prompted for password: `4dhWlbHg0Jlp`
