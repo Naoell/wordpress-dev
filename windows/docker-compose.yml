@@ -3,11 +3,11 @@ version: '3.1'
 services:
 
   wordpress:
-    image: naoe/wordpress-windows
     build: .
+    container_name: wordpress_container
     restart: always
     volumes:
-      - ../wp-content:/var/www/html/wp-content
+      - ./wp-content:/var/www/html/wp-content
     ports:
       - 8080:80  
     environment:
@@ -15,9 +15,10 @@ services:
       WORDPRESS_DEBUG: "true"
 
   mysql:
+    container_name: mysql_container
     image: mysql:5.7
     restart: always
     volumes:
-      - ../mysql:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 4dhWlbHg0Jlp
