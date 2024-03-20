@@ -1,23 +1,27 @@
-version: '3.1'
-
 services:
 
   wordpress:
-    container_name: wordpress_container
-    image: wordpress:latest    
+    image: wordpress:latest
+    container_name: wordpress_dev
+    restart: unless-stopped
     volumes:
       - ./wp-content:/var/www/html/wp-content
     ports:
-      - 8080:80  
+      - 8080:80
     environment:
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: 4dhWlbHg0Jlp
-      WORDPRESS_DEBUG: "true"
+      WORDPRESS_DEBUG: 1
 
   mysql:
-    container_name: mysql_container
-    image: mysql:5.7
-    restart: always
+    container_name: mysql_dev
+    image: mysql:latest
+    restart: unless-stopped
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: 4dhWlbHg0Jlp
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: 4dhWlbHg0Jlp
+      MYSQL_ROOT_PASSWORD: ZxQrKIfYNkhtBWR1
